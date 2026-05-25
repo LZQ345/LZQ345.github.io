@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="测测小游戏站 2.1：职业人格测试、甄嬛传、欢乐颂。仅供娱乐与自我探索。"
+    />
+    <title>测测小游戏站 2.1 · 职业 &amp; 娱乐测试</title>
+    <link rel="stylesheet" href="css/style2.1.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <p class="site-brand">测测小游戏站 <span class="site-version">2.1</span></p>
+        <p class="site-tagline">轻量趣味测试，随手玩一局</p>
+      </div>
+    </header>
+
+    <main id="main" class="main" tabindex="-1">
+      <section id="view-home" class="view view--active" aria-labelledby="home-title">
+        <h1 id="home-title" class="page-title">测试广场</h1>
+        <p class="page-lead">置顶为职业探索；下方为剧集娱乐向小测试。</p>
+
+        <ul class="test-grid test-grid--primary" role="list">
+          <li class="test-grid__wide">
+            <button
+              type="button"
+              class="test-card test-card--wide"
+              data-action="open-intro"
+              data-quiz="career"
+            >
+              <span class="test-card__icon" aria-hidden="true">职</span>
+              <span class="test-card__text">
+                <span class="test-card__title">职业人格测试</span>
+                <span class="test-card__desc">25 题 · 工作环境、团队角色与三阶段成长路线</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+
+        <ul class="test-grid test-grid--compact" role="list">
+          <li>
+            <button
+              type="button"
+              class="test-card test-card--compact"
+              data-action="open-intro"
+              data-quiz="zhenhuan"
+            >
+              <span class="test-card__icon" aria-hidden="true">宫</span>
+              <span class="test-card__title">测测你是甄嬛传里的谁</span>
+              <span class="test-card__desc">10 道情景题</span>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="test-card test-card--compact test-card--huanlesong"
+              data-action="open-intro"
+              data-quiz="huanlesong"
+            >
+              <span class="test-card__icon" aria-hidden="true">颂</span>
+              <span class="test-card__title">测测你是欢乐颂里的谁</span>
+              <span class="test-card__desc">魔都一周 · 10 题</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section id="view-intro" class="view" hidden aria-labelledby="intro-title">
+        <h1 id="intro-title" class="page-title">测试说明</h1>
+        <div class="panel intro-panel">
+          <div id="intro-dynamic"></div>
+          <p class="fine-print" id="intro-disclaimer">本测试仅供娱乐。</p>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn btn--ghost" data-action="back-home">返回首页</button>
+          <button type="button" class="btn btn--primary" data-action="start-quiz">开始答题</button>
+        </div>
+      </section>
+
+      <section id="view-quiz" class="view" hidden aria-labelledby="quiz-title">
+        <h1 id="quiz-title" class="visually-hidden">答题</h1>
+        <div class="quiz-top">
+          <p class="quiz-progress" id="quiz-progress" aria-live="polite">第 1 / 10 题</p>
+          <div
+            class="progress-bar"
+            role="progressbar"
+            aria-valuemin="1"
+            aria-valuemax="10"
+            aria-valuenow="1"
+            id="quiz-progressbar"
+          >
+            <span class="progress-bar__fill" id="quiz-progress-fill"></span>
+          </div>
+        </div>
+
+        <article class="panel question-panel" id="question-panel">
+          <p class="question-scene" id="question-scene"></p>
+          <h2 class="question-title" id="question-title"></h2>
+          <fieldset class="options" id="question-options">
+            <legend class="visually-hidden">请选择一项</legend>
+          </fieldset>
+        </article>
+
+        <p class="toast" id="toast" role="status" aria-live="polite" hidden></p>
+
+        <div class="actions actions--spread">
+          <button type="button" class="btn btn--ghost" id="btn-prev" data-action="prev-question">上一题</button>
+          <button type="button" class="btn btn--primary" id="btn-next" data-action="next-question">下一题</button>
+        </div>
+      </section>
+
+      <section id="view-result" class="view" hidden aria-labelledby="result-title">
+        <h1 id="result-title" class="page-title">测试结果</h1>
+        <article class="panel result-panel" id="result-panel"></article>
+        <div class="actions actions--stack">
+          <button type="button" class="btn btn--secondary" id="btn-copy">复制结果文案</button>
+          <div class="actions actions--spread">
+            <button type="button" class="btn btn--ghost" data-action="back-home">返回首页</button>
+            <button type="button" class="btn btn--primary" data-action="restart-quiz">再测一次</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        职业测试借鉴 MBTI、霍兰德、DISC 等维度思路，仅供娱乐与自我探索，不构成心理或职业决策建议。剧集测试为文化向联想，与官方无关。
+      </p>
+    </footer>
+
+    <script src="js/quiz-data-entertainment2.1.js"></script>
+    <script src="js/quiz-data-career2.1.js"></script>
+    <script src="js/app2.1.js"></script>
+  </body>
+</html>
